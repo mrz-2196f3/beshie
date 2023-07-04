@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  
+<body style="text-align:center;">
+    <h1 style="color:pink;">  
+           Beshify🤸 
+    </h1>
+    <h2>Text value property</h2>
+    <p>
+        Simple website to beshify a text by MrZ 
+    </p>
+   
+    <input type="text" id="myText" value="">
+    <button type="button" onclick="beshify()">Convert</button>
+    <p id="demo"></p>
+  
+      
+    <script>
+      
+    // Here the value is stored in new variable x 
+    function beshify() {
+        var x = document.getElementById("myText").value;
+        document.getElementById("demo").innerHTML = x.replace(/\s/g, "🤸");
+    }
+    </script>
+</body>
+  
+</html>
