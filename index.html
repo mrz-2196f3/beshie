@@ -5,14 +5,15 @@
            🤸Beshify🤸 
     </h1>
     <h2>Simple website to beshify a text by MrZ</h2>
-    <p>
+    <small>
         Inspired by my beshie ( Janezyl Gacer )
-    </p>
-   <button type="button" onclick="copyToClipboard('#demo')">COPY</button>
+    </small>
+   <p id="demo"></p>
+   <button type="button" onclick="copyToClipboard()">COPY</button>
     <input type="text" onchange="beshify()" id="myText" value=""> 
     <button type="button" onclick="beshify()">Convert</button>
   
-    <p id="demo"></p>
+    
   
       
     <script>
@@ -22,19 +23,17 @@
         var x = document.getElementById("myText").value;
         document.getElementById("demo").innerHTML = x.replace(/\s/g, "🤸");
     }
-function copyText() {
-      
-            /* Copy text into clipboard */
-  
-            navigator.clipboard.writeText
-                (document.getElementById("demo").value);
-        }
-function copyToClipboard(element) {
-  var $temp = $("<input>");
+function copyToClipboard() {
+    /* Copy text into clipboard */
+    var copyText = document.getElementById("demo");
+    copyText.select();
+    document.execCommand("copy");
+  /*var $temp = $("<input>");
   $("body").append($temp);
   $temp.val($(element).text()).select();
   document.execCommand("copy");
   $temp.remove();
+  */
 }
 
     </script>
