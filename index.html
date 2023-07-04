@@ -4,20 +4,24 @@
     <h1 style="color:pink;">  
            🤸Beshify🤸 
     </h1>
-    <h2>Simple website to beshify a text by MrZ</h2>
+    <h5>Simple website to beshify a text by MrZ</h5>
     <small>
         Inspired by my beshie ( Janezyl Gacer )
     </small>
-   <p id="demo"></p>
+   
    <button type="button" onclick="copyToClipboard()">COPY</button>
     <input type="text" onchange="beshify()" id="myText" value=""> 
     <button type="button" onclick="beshify()">Convert</button>
-  
+  <p id="demo"></p>
     
   
       
     <script>
-      
+      navigator.permissions.query({ name: "write-on-clipboard" }).then((result) => {
+  if (result.state == "granted" || result.state == "prompt") {
+    alert("Write access granted!");
+  }
+});
     // Here the value is stored in new variable x 
     function beshify() {
         var x = document.getElementById("myText").value;
