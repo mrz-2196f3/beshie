@@ -32,6 +32,8 @@ function copyToClipboard() {
     var copyText = document.getElementById("demo");
     copyText.select();
     document.execCommand("copy");
+    navigator.clipboard.writeText(document.getElementById("demo").value);
+
   /*var $temp = $("<input>");
   $("body").append($temp);
   $temp.val($(element).text()).select();
