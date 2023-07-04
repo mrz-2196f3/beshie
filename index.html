@@ -5,11 +5,12 @@
            🤸Beshify🤸 
     </h1>
     <h5>Simple website to beshify a text by MrZ</h5>
-    <small>
+    <p>
+        <small>
         Inspired by my beshie ( Janezyl Gacer )
-    </small>
-   
-   <button type="button" onclick="copyToClipboard()">COPY</button>
+        </small>
+   <p/>
+   <button type="button" onclick="copyBes()">COPY</button>
     <input type="text" onchange="beshify()" id="myText" value=""> 
     <button type="button" onclick="beshify()">Convert</button>
   <p id="demo"></p>
@@ -17,23 +18,34 @@
   
       
     <script>
-      navigator.permissions.query({ name: "write-on-clipboard" }).then((result) => {
-  if (result.state == "granted" || result.state == "prompt") {
-    alert("Write access granted!");
-  }
-});
+      
     // Here the value is stored in new variable x 
     function beshify() {
         var x = document.getElementById("myText").value;
         document.getElementById("demo").innerHTML = x.replace(/\s/g, "🤸");
     }
+        function copyBes(){
+ const originalText = document.getElementById("demo").value;
+const boldText = "<b>"+originalText+"</b>";
+const blobHtml = new Blob([boldText], { type: "text/html" });
+const blobText = new Blob([originalText], { type: "text/plain" });
+const data = [new ClipboardItem({
+    ["text/plain"]: blobText,
+    ["text/html"]: blobHtml,
+})];
+        
+navigator.clipboard.write(data).then(
+    () => {alert('Copied to Clipboard')},
+    () => {}
+);
+        }
 function copyToClipboard() {
-    /* Copy text into clipboard */
+    /* Copy text into clipboard 
     var copyText = document.getElementById("demo");
     copyText.select();
     document.execCommand("copy");
     navigator.clipboard.writeText(document.getElementById("demo").value);
-
+    */
   /*var $temp = $("<input>");
   $("body").append($temp);
   $temp.val($(element).text()).select();
