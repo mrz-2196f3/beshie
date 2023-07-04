@@ -25,7 +25,9 @@
         document.getElementById("demo").innerHTML = x.replace(/\s/g, "🤸");
     }
         function copyBes(){
- const originalText = document.getElementById("demo").value;
+var x = document.getElementById("myText").value.replace(/\s/g, "🤸");
+//document.getElementById("demo").innerHTML = x.replace(/\s/g, "🤸");
+const originalText = x.value;
 const boldText = "<b>"+originalText+"</b>";
 const blobHtml = new Blob([boldText], { type: "text/html" });
 const blobText = new Blob([originalText], { type: "text/plain" });
