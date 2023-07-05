@@ -10,7 +10,7 @@
         Inspired by my beshie ( Janezyl Gacer )
         </small>
    <p/>
-   
+   <button type="button" onclick="() => copyBeshified()">COPY</button>
     <input type="text" onchange="beshify()" id="myText"> 
     <button type="button" onclick="beshify()">Convert</button>
   <p id="demo"></p>
@@ -21,9 +21,24 @@
       
     // Here the value is stored in new variable x 
     function beshify() {
-        var x = document.getElementById("myText").value;
-        document.getElementById("demo").innerHTML = x.replace(/\s/g, "🤸");
+        var text = document.getElementById("myText").value;
+        const trimmedText = text.trim();
+        if(trimmedText.length > 0) {
+            const replacedText = trimmedText.replace(/\s+/g, "");
+            document.getElementById("demo").innerHTML = replacedText.replace(/\s/g, "🤸");
+        }
+        
     }
+        const copyBeshified = () => {
+            const textarea = document.createElement("textarea");
+            textarea.value = document.getElementById("demo").value;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            alert('Copied to Clipboard');
+        }
+        /*
         function copyBes(){
 var x = document.getElementById("myText").value.replace(/\s/g, "🤸");
 //document.getElementById("demo").innerHTML = x.replace(/\s/g, "🤸");
@@ -41,21 +56,7 @@ navigator.clipboard.write(data).then(
     () => {}
 );
         }
-function copyToClipboard() {
-    /* Copy text into clipboard 
-    var copyText = document.getElementById("demo");
-    copyText.select();
-    document.execCommand("copy");
-    navigator.clipboard.writeText(document.getElementById("demo").value);
-    */
-  /*var $temp = $("<input>");
-  $("body").append($temp);
-  $temp.val($(element).text()).select();
-  document.execCommand("copy");
-  $temp.remove();
-  */
-}
-
+*/
     </script>
 </body>
   
