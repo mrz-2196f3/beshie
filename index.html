@@ -10,7 +10,7 @@
         Inspired by my beshie ( Janezyl Gacer )
         </small>
    <p/>
-   <button type="button" onclick="() => copyBeshified()">COPY</button>
+   <button type="button" onclick="copyBeshified()">COPY</button>
     <input type="text" onchange="beshify()" id="myText"> 
     <button type="button" onclick="beshify()">Convert</button>
   <p id="demo"></p>
@@ -24,12 +24,12 @@
         var text = document.getElementById("myText").value;
         const trimmedText = text.trim();
         if(trimmedText.length > 0) {
-            const replacedText = trimmedText.replace(/\s+/g, "");
+            const replacedText = trimmedText.replace(/\s+/g, " ");
             document.getElementById("demo").innerHTML = replacedText.replace(/\s/g, "🤸");
         }
         
     }
-        const copyBeshified = () => {
+       function copyBeshified () {
             const textarea = document.createElement("textarea");
             textarea.value = document.getElementById("demo").value;
             document.body.appendChild(textarea);
