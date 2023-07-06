@@ -44,6 +44,7 @@ document.getElementById("demo").innerHTML = greeting;
     function beshify() {
         
         var text = document.getElementById("myText").value;
+        // Detect if the text input has white spaces
         if(containsWhitespace(text)){
         const trimmedText = text.trim();
         
@@ -78,6 +79,9 @@ document.getElementById("demo").innerHTML = greeting;
                 copyButton.classList.remove("highlight");
             }, 500);
         }
+        } else {
+            alert('NOTE: Add space between words or characters to convert it as beshified text \n-MrZ');
+            console.log('NOTE: Add space between words or characters to convert it as beshified text');
         }
     }
     function copyBeshified () {
@@ -86,11 +90,11 @@ document.getElementById("demo").innerHTML = greeting;
         
         navigator.clipboard.writeText(text)
         .then(function() {
-            alert("Copied to clipboard!");
+            alert('Copied to clipboard!');
         })
         .catch(function(err) {
-            alert("Failed to copy beshified text.");
-            console.error("Failed to copy beshified text: ", err);
+            alert('Failed to copy beshified text.');
+            console.error('Failed to copy beshified text: ', err);
         });
     }
         
