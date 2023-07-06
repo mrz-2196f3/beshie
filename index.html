@@ -1,58 +1,91 @@
 <!DOCTYPE html>
-<html>
-<head>
+ <html>
+  <head>
     <!-- Added Belanosima font from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-</head>
+  </head>
 <body style="text-align:center;">
+    
     <div class="container">
+        
         <div class="title-container">
+            
             <h1 class="spin-once">🤸</h1>
+            
             <h1 style="color:pink;">Beshify</h1>
+            
             <h1 class="spin-once">🤸🏻‍♂️</h1></h1>
+            
         </div>
         <h5>Simple website to beshify a text by MrZ</h5>
-        <h1 style="color:pink;"> <p> <small> Inspired by my beshie </small> ( Janezyl Gacer ) </p> </h1>
+        
+        <h1 style="color:pink;"> <p> <small> Inspired by my beshie ( </small> Janezyl Gacer <small> ) </small> </p> </h1>
+        
         <button id="copyText" type="button" onclick="copyBeshified()">COPY</button>
+        
         <input type="text" id="myText"> 
+        
         <button type="button" onclick="beshify()">Convert</button>
+        
         <div class="text-container">
+            
             <p id="demo"></p>
+            
         </div>
     </div>
     
     <script>
         
+        //function that detect and return if there are spaces in given string
         function containsWhitespace(str) {
+            
           return /\s/.test(str);
+            
          }
+        
         //Auto Greet kay beshie
         const time = new Date().getHours();
+        
       let greeting;
+        
      if (time < 10) {
+         
   greeting = "Good🤸morning🤸beshie🤸ko";
-     } else if (time < 20) {
+         
+     } else if (time < 20) 
+     
   greeting = "Good🤸day🤸beshie🤸ko";
+        
      } else {
+         
   greeting = "Good🤸evening🤸beshie🤸ko";
+         
      }
         //display auto greet
-document.getElementById("demo").innerHTML = greeting;
+
+        //input box
+        // document.getElementById("myText").innerHTML = greeting.replace('🤸', ' ');
+        // output box
+        document.getElementById("demo").innerHTML = greeting;
         
     // Here the value is stored in new variable as plain text 
+    // Lets return it as beshified text
     function beshify() {
         
-        var text = document.getElementById("myText").value;
+        var text = document.getElementById("myText").value
+            
         // Detect if the text input has white spaces
         if(containsWhitespace(text)){
+            
         const trimmedText = text.trim();
         
         if  (trimmedText.length > 0) {
             
-            const replacedText = trimmedText.replace(/\s+/g, " ");
+            const replacedText = trimmedText.replace(/\s+/g, " 
+                                                     
             //replace single space into emoji
             
             document.getElementById("demo").innerHTML = replacedText.replace(/\s/g, "🤸");
@@ -62,6 +95,7 @@ document.getElementById("demo").innerHTML = greeting;
         if  (trimmedText.length > 2 || trimmedText.length > 4) {
             
             const replacedText = trimmedText.replace(/\s+/g, " ");
+            
             //replace single space into emoji
             
             document.getElementById("demo").innerHTML = replacedText.replace(/\s/g, "🤸🏻‍♂️");
@@ -72,34 +106,52 @@ document.getElementById("demo").innerHTML = greeting;
         
         // Copy text button blinks for 2 seconds after converting text
         var copyButton = document.getElementById("copyText");
+            
         if (trimmedText != "") {
+            
             var copyButton = document.getElementById("copyText");
+            
             copyButton.classList.add("highlight");
             
             // Remove class after 1 second
-            setTimeout(function() {
+            setTimeout(function() 
+                       
                 copyButton.classList.remove("highlight");
+            
             }, 500);
+            
         }
+        
         } else {
+        
             alert('NOTE: Add space between words or characters to convert it as beshified text \n-MrZ');
+        
             console.log('NOTE: Add space between words or characters to convert it as beshified text');
+        
         }
     }
     function copyBeshified () {
+        
         var textElement = document.getElementById("demo");
+        
         var text = textElement.innerText;
         
         navigator.clipboard.writeText(text)
         .then(function() {
+            
             alert('Copied to clipboard!');
         })
         .catch(function(err) {
+            
             alert('Failed to copy beshified text.');
+            
             console.error('Failed to copy beshified text: ', err);
+            
         });
     }
         
     </script>
-</body>
-</html>
+    
+   </body>
+    
+ </html>
