@@ -24,20 +24,27 @@
         </div>
     </div>
     <script>
+        function containsWhitespace(str) {
+          return /\s/.test(str);
+         }
         //Auto Greet kay beshie
         const time = new Date().getHours();
-let greeting;
-if (time < 10) {
+      let greeting;
+     if (time < 10) {
   greeting = "Good🤸morning🤸beshie🤸ko";
-} else if (time < 20) {
+     } else if (time < 20) {
   greeting = "Good🤸day🤸beshie🤸ko";
-} else {
+     } else {
   greeting = "Good🤸evening🤸beshie🤸ko";
-}
+     }
+        //display auto greet
 document.getElementById("demo").innerHTML = greeting;
+        
     // Here the value is stored in new variable as plain text 
     function beshify() {
+        
         var text = document.getElementById("myText").value;
+        if(containsWhitespace(text)){
         const trimmedText = text.trim();
         
         if  (trimmedText.length > 0) {
@@ -59,6 +66,7 @@ document.getElementById("demo").innerHTML = greeting;
             
         }
     }
+        
         // Copy text button blinks for 2 seconds after converting text
         var copyButton = document.getElementById("copyText");
         if (trimmedText != "") {
@@ -69,6 +77,7 @@ document.getElementById("demo").innerHTML = greeting;
             setTimeout(function() {
                 copyButton.classList.remove("highlight");
             }, 500);
+        }
         }
     }
     function copyBeshified () {
