@@ -15,7 +15,7 @@
             <h1 class="spin-once">🤸🏻‍♂️</h1></h1>
         </div>
         <h5>Simple website to beshify a text by MrZ</h5>
-        <p> <small>Inspired by my beshie </small> ( Janezyl Gacer )</p>
+        <h1 style="color:pink;"> <p> <small> Inspired by my beshie </small> ( Janezyl Gacer ) </p> </h1>
         <button id="copyText" type="button" onclick="copyBeshified()">COPY</button>
         <input type="text" id="myText"> 
         <button type="button" onclick="beshify()">Convert</button>
@@ -49,7 +49,7 @@ document.getElementById("demo").innerHTML = greeting;
             
             
         } else {
-        if  (trimmedText.length > 4 || trimmedText.length > 9) {
+        if  (trimmedText.length > 2 || trimmedText.length > 4) {
             
             const replacedText = trimmedText.replace(/\s+/g, " ");
             //replace single space into emoji
