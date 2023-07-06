@@ -1,0 +1,131 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-size: 12px;
+    background: #485563;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-repeat: no-repeat;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+* {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #fff;
+    letter-spacing: 0.05rem;
+    text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    cursor: default;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+button {
+    margin: 0 5px;
+    color: #000;
+    background-color: pink;
+    padding: 10px 30px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+button:hover, #copyText.highlight {
+    background-color: rgb(255, 136, 156);
+}
+
+button:hover:focus:active {
+    background-color: rgb(255, 81, 110);
+    color: #fff;
+}
+
+input[type="text"] {
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 3px solid transparent;
+    border-radius: 5px;
+    padding: 7px;
+    width: 30vw;
+    font-size: 1.3rem;
+    color: #000;
+    cursor: text;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: 3px solid rgb(255, 136, 156);
+}
+
+#demo {
+    font-weight: normal;
+    font-size: 1.3rem;
+    cursor: text;
+}
+
+.text-container {
+    margin: 25px 50px 0 50px;
+    max-height: 300px;
+    overflow: auto;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: fade-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, move-up 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes move-up {
+    from {
+      transform: translateY(100px);
+    }
+    to {
+      transform: translateY(0);
+    }
+}
+
+/* Styling scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: pink;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(255, 136, 156);
+}
