@@ -12,27 +12,53 @@
         <div class="title-container">
             <h1 class="spin-once">🤸</h1>
             <h1 style="color:pink;">Beshify</h1>
-            <h1 class="spin-once">🤸</h1></h1>
+            <h1 class="spin-once">🤸🏻‍♂️</h1></h1>
         </div>
         <h5>Simple website to beshify a text by MrZ</h5>
-        <p>Inspired by my beshie ( Janezyl Gacer )</p>
-        <button id="copyText" type="button" onclick="copyBeshified()">Copy Text</button>
+        <p> <small>Inspired by my beshie </small> ( Janezyl Gacer )</p>
+        <button id="copyText" type="button" onclick="copyBeshified()">COPY</button>
         <input type="text" id="myText"> 
         <button type="button" onclick="beshify()">Convert</button>
         <div class="text-container">
-            <p id="demo">Bat🤸malungkot🤸ang🤸beshy🤸ko?</p>
+            <p id="demo"></p>
         </div>
     </div>
     <script>
-    // Here the value is stored in new variable x 
+        //Auto Greet kay beshie
+        const time = new Date().getHours();
+let greeting;
+if (time < 10) {
+  greeting = "Good🤸morning🤸beshie🤸ko";
+} else if (time < 20) {
+  greeting = "Good🤸day🤸beshie🤸ko";
+} else {
+  greeting = "Good🤸evening🤸beshie🤸ko";
+}
+document.getElementById("demo").innerHTML = greeting;
+    // Here the value is stored in new variable as plain text 
     function beshify() {
         var text = document.getElementById("myText").value;
         const trimmedText = text.trim();
-        if  (trimmedText.length > 0) {
-            const replacedText = trimmedText.replace(/\s+/g, " ");
-            document.getElementById("demo").innerHTML = replacedText.replace(/\s/g, "🤸");
-        }
         
+        if  (trimmedText.length > 0) {
+            
+            const replacedText = trimmedText.replace(/\s+/g, " ");
+            //replace single space into emoji
+            
+            document.getElementById("demo").innerHTML = replacedText.replace(/\s/g, "🤸");
+            
+            
+        } else {
+        if  (trimmedText.length > 4 || trimmedText.length > 9) {
+            
+            const replacedText = trimmedText.replace(/\s+/g, " ");
+            //replace single space into emoji
+            
+            document.getElementById("demo").innerHTML = replacedText.replace(/\s/g, "🤸🏻‍♂️");
+            
+            
+        }
+    }
         // Copy text button blinks for 2 seconds after converting text
         var copyButton = document.getElementById("copyText");
         if (trimmedText != "") {
@@ -54,29 +80,11 @@
             alert("Copied to clipboard!");
         })
         .catch(function(err) {
-            alert("Failed to copy text.");
-            console.error("Failed to copy text: ", err);
+            alert("Failed to copy beshified text.");
+            console.error("Failed to copy beshified text: ", err);
         });
     }
-        /*
-        function copyBes(){
-var x = document.getElementById("myText").value.replace(/\s/g, "🤸");
-//document.getElementById("demo").innerHTML = x.replace(/\s/g, "🤸");
-const originalText = x.value;
-const boldText = "<b>"+originalText+"</b>";
-const blobHtml = new Blob([boldText], { type: "text/html" });
-const blobText = new Blob([originalText], { type: "text/plain" });
-const data = [new ClipboardItem({
-    ["text/plain"]: blobText,
-    ["text/html"]: blobHtml,
-})];
         
-navigator.clipboard.write(data).then(
-    () => {alert('Copied to Clipboard')},
-    () => {}
-);
-        }
-*/
     </script>
 </body>
 </html>
