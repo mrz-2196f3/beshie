@@ -28,6 +28,14 @@ h1 {
     font-size: 3rem;
 }
 
+.title-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+}
+
 h5 {
     font-size: 1.5rem;
     font-weight: 300;
@@ -89,9 +97,10 @@ input[type="text"]:focus {
     overflow: auto;
     opacity: 0;
     transform: translateY(100px);
-    animation: fade-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, move-up 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation: fade-in 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, move-up 0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
+/* Add a fade slide up animation on the text container when the page loads */
 @keyframes fade-in {
     from {
         opacity: 0;
@@ -107,6 +116,21 @@ input[type="text"]:focus {
     }
     to {
       transform: translateY(0);
+    }
+}
+
+/* Add spinning animation over the 🤸 emoji on the <h1> */
+.spin-once {
+    transform: rotate(180deg);
+    animation: spin-once-animation 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
+}
+
+@keyframes spin-once-animation {
+    0% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
