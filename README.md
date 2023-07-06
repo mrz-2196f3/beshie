@@ -1,6 +1,11 @@
-# be-shieshhhh
-### tumbling tayo
+[![Be-shiesh proj]]
+### tambling tayo
 **Simple website to beshify a text.**
 
-**REDESIGNED by Phyrozz**
+## Contact
+
+**Mark Agbisit** - [@macmac.tisibga](https://facebook.com/macmac.tisibga) - info.mrz.dev@gmail.com
+
+
+
 
