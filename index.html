@@ -37,7 +37,7 @@
     </div>
     <script>
         //detect changes in input
-     document.querySelector("#myText").addEventListener("input", test);
+     document.querySelector("#myText").addEventListener("input", beshify);
         //function that detect and return if there are spaces in given string
         function containsWhitespace(str) {
           return /\s/.test(str);
@@ -62,6 +62,10 @@
         
     // Here the value is stored in new variable as plain text 
     // Lets return it as beshified text
+  /*   function dt(e){
+      beshify();
+    } 
+    */
     function beshify() {
         var text = document.getElementById("myText").value;
         // Detect if the text input has white spaces
