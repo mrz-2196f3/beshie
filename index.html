@@ -22,8 +22,8 @@
             <h1 class="spin-once">🤸🏻‍♂️</h1>
             
         </div>
-        <h6> <p> Simple website to beshify a text by </p> <h4> MrZ </h4> </h6>
-             <p>Inspired by my beshie <small> ( Janezyl Gacer ) </small></p>
+        <h6 style="flex-flow: column nowrap;"> <p> Simple website to beshify a text by </p> <h4> MrZ </h4> </h6>
+             <small>Inspired by my beshie <p> ( Janezyl Gacer ) </p></small>
         
      
         <button id="copyText" type="button" onclick="copyBeshified()">COPY</button>
@@ -87,15 +87,8 @@
             
         }
     }
-        // Copy text button blinks for 2 seconds after converting text
-        var copyButton = document.getElementById("copyText");
         if (trimmedText != "") {
-            var copyButton = document.getElementById("copyText");
-            copyButton.classList.add("highlight");
-            // Remove class after 1 second
-            setTimeout(function() {
-                copyButton.classList.remove("highlight");
-            }, 500);
+            
         }
         } else {
          /*
@@ -105,14 +98,22 @@
         }
     }
     function copyBeshified () {
+     //copy button blinks for 2secs
+     var copyButton = document.getElementById("copyText");
+            copyButton.classList.add("highlight");
+            // Remove class after 1 second
+            setTimeout(function() {
+                copyButton.classList.remove("highlight");
+            }, 500);
+     
         var textElement = document.getElementById("demo");
       var text = textElement.innerText;
         navigator.clipboard.writeText(text)
         .then(function() {    
-            alert('\n\nCopied to clipboard!');
+            alert('\nCopied to clipboard!');
         })
         .catch(function(err) {
-            alert('\n\nFailed to copy beshified text.');
+            alert('\nFailed to copy beshified text.');
             console.error('Failed to copy beshified text: ', err);
             
         });
