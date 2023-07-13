@@ -1,13 +1,15 @@
-body, html {
-    height: 100%;
-    margin: 0;
-}
 
 body {
     font-size: 12px;
-    background: #485563;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: linear-gradient(-45deg, #3c535c, #233b44, #166380, #0d3f52);
+    background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+    /*
+    background: #1b2733;  // fallback for old browsers 
+    background: -webkit-linear-gradient(to right, #475668, #445d79);  // Chrome 10-25, Safari 5.1-6 
+    background: linear-gradient(to right, #406a9b, #34485e); // W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
+    */
     background-repeat: no-repeat;
     overflow-y: hidden;
     display: flex;
@@ -132,6 +134,17 @@ input[type="text"]:focus {
     100% {
         transform: rotate(360deg);
     }
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 /* Styling scrollbar */
