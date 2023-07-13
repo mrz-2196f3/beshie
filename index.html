@@ -36,7 +36,8 @@
         </div>
     </div>
     <script>
-        
+        //detect changes in input
+     document.querySelector("#myText").addEventListener("input", test);
         //function that detect and return if there are spaces in given string
         function containsWhitespace(str) {
           return /\s/.test(str);
