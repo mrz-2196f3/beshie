@@ -124,7 +124,7 @@ input[type="text"]:focus {
 /* Add spinning animation over the 🤸 emoji on the <h1> */
 .spin-once {
     transform: rotate(180deg);
-    animation: spin-once-animation 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
+    animation: spin-once-animation 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s infinite;
 }
 
 @keyframes spin-once-animation {
