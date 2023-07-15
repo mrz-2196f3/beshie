@@ -31,6 +31,7 @@ h1 {
 }
 
 .title-container {
+    margin-top: 150px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -52,7 +53,7 @@ button {
     margin: 0 5px;
     color: #000;
     background-color: pink;
-    padding: 10px 30px;
+    padding: 10px 10px;
     font-size: 1.3rem;
     border: none;
     border-radius: 5px;
@@ -63,11 +64,13 @@ button {
 
 button:hover, #copyText.highlight {
     background-color: rgb(255, 136, 156);
+    color: #fff;
 }
 
 button:hover:focus:active {
     background-color: rgb(255, 81, 110);
     color: #fff;
+    
 }
 
 input[type="text"] {
@@ -146,6 +149,50 @@ input[type="text"]:focus {
 		background-position: 0% 50%;
 	}
 }
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+  }
+  
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 5.5s;
+    animation: fadein 0.5s, fadeout 0.5s 5.5s;
+  }
+  
+  /* Animations to fade the snackbar in and out */
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
 
 /* Styling scrollbar */
 ::-webkit-scrollbar {
