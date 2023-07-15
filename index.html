@@ -22,20 +22,25 @@
             <h1 class="spin-once">🤸🏻‍♂️</h1>
             
         </div>
+
+        <!--
         <h6 style="flex-flow: column nowrap;"> <p> Simple website to beshify a text by </p> <h4> MrZ </h4> </h6>
-            <!-- <p>Inspired by my beshie <small> ( Janezyl Gacer ) </small></p> -->
+             <p>Inspired by my beshie <small> ( Janezyl Gacer ) </small></p> -->
         
      
-        <button id="copyText" type="button" onclick="copyBeshified()">COPY</button>
      
-        <input type="text" id="myText"> 
+        <input type="text" id="myText"> <button id="copyText" type="button" onclick="copyBeshified()">COPY</button>
+
      
-        <button type="button" onclick="beshify()">Convert</button>
+       <!-- <button type="button" onclick="beshify()">Convert</button> -->
         <div class="text-container">
             <p id="demo"></p>
         </div>
+        <p style="margin-top: 230px;">MRZ - 2023 - 24 | Inspired by my Beshie <small> ( Janezyl Gacer ) </small></p>
+        <div id="snackbar">Dear Janezyl Gacer, I love you so much <!--always remember if you get tired, learn to rest not to quit. --></div>
     </div>
     <script>
+        showSnackBar();
         //detect changes in input
      document.querySelector("#myText").addEventListener("input", beshify);
         //function that detect and return if there are spaces in given string
@@ -58,6 +63,7 @@
         //input box
         
         // output box
+        
         document.getElementById("demo").innerHTML = greeting;
         
     // Here the value is stored in new variable as plain text 
@@ -118,6 +124,16 @@
             
         });
     }
+    function showSnackBar() {
+  // Get the snackbar DIV
+  var x = document.getElementById("snackbar");
+
+  // Add the "show" class to DIV
+  x.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
+}
         
     </script>
    </body>
